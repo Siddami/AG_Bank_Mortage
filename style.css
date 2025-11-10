@@ -10,21 +10,34 @@
   --primary-color: #ffffff;
   --accent-blue: #066ef6;
   --accent-purple: #9900ff;
-  --text-dark: #45535e;
+  --text-dark: #374950;
   --dim-text: #888;
   --slider-track-gray: #e0e0e0;
 
   /* --- LAYOUT & FONT --- */
-  background-color: #e3edf9;
+  background: linear-gradient(to right, #b7ccf5, #a99ff7, #a374fa);
   color: var(--text-dark);
   font-size: 16px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-container {
+  width: 80%;
+  max-width: 1200px;
+  background-color: #e5ecf9;
 }
 
 /* --- 1. Global Layout & Header --- */
 
 header {
   background-color: var(--primary-color);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 4px #d3e3f7;
   padding: 15px 0;
 }
 
@@ -33,13 +46,12 @@ header {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  max-width: 1200px;
   margin: 0 auto;
   align-items: center;
 }
 
 .navbar h1 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .menu-icon i {
@@ -49,13 +61,11 @@ header {
 
 .container {
   width: 90%;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 0;
+  padding-block: 5em;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+  justify-content: flex-start;
+  align-items: center; 
 }
 
 /* --- 2. Input Form (Left Side) --- */
@@ -63,18 +73,18 @@ header {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 55%;
+  width: 60%;
 }
 
 .form-header h2 {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.75rem;
+  font-weight: 500;
   margin-bottom: 5px;
 }
 
 .form-header p {
   color: var(--dim-text);
-  font-size: 1rem;
+  font-size: 0.75rem;
   margin-bottom: 20px;
 }
 
@@ -82,14 +92,16 @@ header {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  max-width: 440px;
 }
 
 /* Price Inputs (Purchase Price / Down Payment) */
 
 .input-group label {
   display: block;
-  font-size: 1rem;
+  font-size: 0.75rem;
   margin-bottom: 10px;
+  color: var(--dim-text);
 }
 
 .price-display {
@@ -99,19 +111,20 @@ header {
 }
 
 .price-display span {
-  font-size: 2.5rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-right: 5px;
 }
 
 .price-display input[type="number"] {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 1.75rem;
+  font-weight: 500;
   border: none;
   outline: none;
-  padding: 0;
+  padding: 10px 0 0 5px;
   width: 250px;
   background: transparent;
+  color: var(--text-dark);
 }
 
 /* Range Slider Styling */
@@ -128,14 +141,14 @@ input[type="range"] {
 .range-min-max {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 0.65rem;
   color: var(--dim-text);
   margin-top: -5px;
 }
 
 .min-req {
   display: block;
-  font-size: 14px;
+  font-size: 0.65rem;
   color: var(--dim-text);
   margin-top: 5px;
   font-weight: 500;
@@ -152,6 +165,13 @@ input[type="range"] {
 
 /* Custom Radio Buttons */
 
+.period-options > label, .zip-code-input > label{
+  font-size: 0.75rem;
+  color: var(--dim-text);
+  margin-bottom: 10px;
+  display: block;
+}
+
 .radio-option {
   display: block;
   margin-top: 10px;
@@ -166,7 +186,7 @@ input[type="range"] {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 0.835rem;
 }
 
 .radio-option label::before {
@@ -174,9 +194,9 @@ input[type="range"] {
   position: absolute;
   left: 0;
   top: 2px;
-  width: 14px;
-  height: 14px;
-  border: 2px solid #ccc;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #ccc;
   border-radius: 50%;
   background-color: white;
 }
@@ -188,8 +208,8 @@ input[type="range"] {
 .radio-option input[type="radio"]:checked + label::after {
   content: "";
   position: absolute;
-  left: 5px;
-  top: 6px;
+  left: 2px;
+  top: 4px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -203,7 +223,7 @@ input[type="range"] {
 }
 
 .zip-code-input input[type="text"] {
-  font-size: 1rem;
+  font-size: 0.825rem;
   border: none;
   outline: none;
   width: 100%;
@@ -218,14 +238,14 @@ input[type="range"] {
 .mortgage-summary-card {
   background-color: var(--primary-color);
   width: 40%;
-  max-width: 400px;
+  max-width: 450px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   border-radius: 12px;
 }
 
 .output-card {
   background-color: transparent;
-  padding: 30px;
+  padding-block: 4em;
   text-align: center;
   position: relative;
   overflow: visible;

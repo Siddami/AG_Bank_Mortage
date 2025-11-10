@@ -14,152 +14,154 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <h1>AG BANK</h1>
+    <div class="main-container">
+      <header>
+        <nav class="navbar">
+          <h1>AG BANK</h1>
 
-        <div aria-label="Menu" class="menu-icon" role="button" tabindex="0">
-          <i class="fa-regular fa-bars"></i>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <div class="container">
-        <section class="mortgage-form">
-          <div class="form-header">
-            <h2>Get Started with Digital Credit Experience</h2>
-            <p>Qualify or apply your mortgage in minutes</p>
+          <div aria-label="Menu" class="menu-icon" role="button" tabindex="0">
+            <i class="fa-solid fa-bars"></i>
           </div>
-          <form class="form-body">
-            <div class="input-group">
-              <label for="purchase-price-text">Purchase price</label>
-              <div class="price-display">
-                <span>$</span>
+        </nav>
+      </header>
+      <main>
+        <div class="container">
+          <section class="mortgage-form">
+            <div class="form-header">
+              <h2>Get Started with Digital Credit Experience</h2>
+              <p>Qualify or apply your mortgage in minutes</p>
+            </div>
+            <form class="form-body">
+              <div class="input-group">
+                <label for="purchase-price-text">Purchase price</label>
+                <div class="price-display">
+                  <span>$</span>
+                  <input
+                    type="number"
+                    id="purchase-price-text"
+                    name="purchase_price"
+                    value="250000"
+                    min="50000"
+                    max="2500000"
+                  />
+                </div>
                 <input
-                  type="number"
-                  id="purchase-price-text"
-                  name="purchase_price"
+                  type="range"
+                  id="purchase-price-slider"
+                  name="purchase_price_range"
                   value="250000"
                   min="50000"
                   max="2500000"
+                  step="1000"
                 />
+                <div class="range-min-max">
+                  <span>$50 000</span>
+                  <span>$2.5 million</span>
+                </div>
               </div>
-              <input
-                type="range"
-                id="purchase-price-slider"
-                name="purchase_price_range"
-                value="250000"
-                min="50000"
-                max="2500000"
-                step="1000"
-              />
-              <div class="range-min-max">
-                <span>$50 000</span>
-                <span>$2.5 million</span>
-              </div>
-            </div>
 
-            <div class="input-group">
-              <label for="down-payment-text">Down payment</label>
-              <div class="price-display">
-                <span>$</span>
+              <div class="input-group">
+                <label for="down-payment-text">Down payment</label>
+                <div class="price-display">
+                  <span>$</span>
+                  <input
+                    type="number"
+                    id="down-payment-text"
+                    name="down_payment"
+                    value="50000"
+                    min="2000"
+                    max="500000"
+                  />
+                </div>
                 <input
-                  type="number"
-                  id="down-payment-text"
-                  name="down_payment"
+                  type="range"
+                  id="down-payment-slider"
+                  name="down_payment_range"
                   value="50000"
                   min="2000"
                   max="500000"
+                  step="100"
                 />
+                <small class="min-req">4% or more of purchase price</small>
               </div>
-              <input
-                type="range"
-                id="down-payment-slider"
-                name="down_payment_range"
-                value="50000"
-                min="2000"
-                max="500000"
-                step="100"
-              />
-              <small class="min-req">4% or more of purchase price</small>
-            </div>
 
-            <div class="input-group-grid">
-              <div class="period-options">
-                <label>Period</label>
-                <div class="radio-option">
-                  <input
-                    type="radio"
-                    id="arm"
-                    name="period"
-                    value="5/1 arm variable"
-                  />
-                  <label for="arm">5/1 ARM variable</label>
+              <div class="input-group-grid">
+                <div class="period-options">
+                  <label>Period</label>
+                  <div class="radio-option">
+                    <input
+                      type="radio"
+                      id="arm"
+                      name="period"
+                      value="5/1 arm variable"
+                    />
+                    <label for="arm">5/1 ARM variable</label>
+                  </div>
+                  <div class="radio-option">
+                    <input
+                      type="radio"
+                      id="fixed15"
+                      name="period"
+                      value="15 year fixed"
+                    />
+                    <label for="fixed15">15 year fixed</label>
+                  </div>
+                  <div class="radio-option">
+                    <input
+                      type="radio"
+                      id="fixed30"
+                      name="period"
+                      value="30 year fixed"
+                      checked
+                    />
+                    <label for="fixed30">30 year fixed</label>
+                  </div>
                 </div>
-                <div class="radio-option">
+
+                <div class="zip-code-input">
+                  <label for="zip-code">Zip code</label>
                   <input
-                    type="radio"
-                    id="fixed15"
-                    name="period"
-                    value="15 year fixed"
+                    type="text"
+                    id="zip-code"
+                    name="zip_code"
+                    value="90459"
+                    pattern="\d{5}"
+                    maxlength="5"
                   />
-                  <label for="fixed15">15 year fixed</label>
-                </div>
-                <div class="radio-option">
-                  <input
-                    type="radio"
-                    id="fixed30"
-                    name="period"
-                    value="30 year fixed"
-                    checked
-                  />
-                  <label for="fixed30">30 year fixed</label>
                 </div>
               </div>
+            </form>
+          </section>
+          <section class="mortgage-summary-card">
+            <div class="output-card">
+              <p class="card-heading">Your total payment will be</p>
 
-              <div class="zip-code-input">
-                <label for="zip-code">Zip code</label>
-                <input
-                  type="text"
-                  id="zip-code"
-                  name="zip_code"
-                  value="90459"
-                  pattern="\d{5}"
-                  maxlength="5"
-                />
+              <div class="payment-display">
+                <span class="currency-symbol">$</span>
+                <span class="payment-amount">780</span>
               </div>
+
+              <div class="rate-details">
+                <div class="detail-item">
+                  <p class="label">Rate</p>
+                  <p class="value">5.250%</p>
+                </div>
+                <div class="detail-item">
+                  <p class="label">APR</p>
+                  <p class="value">4.418%</p>
+                </div>
+                <div class="detail-item">
+                  <p class="label">Points</p>
+                  <p class="value">0.325</p>
+                </div>
+              </div>
+
+              <button class="cta-button">Get started</button>
             </div>
-          </form>
-        </section>
-        <section class="mortgage-summary-card">
-          <div class="output-card">
-            <p class="card-heading">Your total payment will be</p>
-
-            <div class="payment-display">
-              <span class="currency-symbol">$</span>
-              <span class="payment-amount">780</span>
-            </div>
-
-            <div class="rate-details">
-              <div class="detail-item">
-                <p class="label">Rate</p>
-                <p class="value">5.250%</p>
-              </div>
-              <div class="detail-item">
-                <p class="label">APR</p>
-                <p class="value">4.418%</p>
-              </div>
-              <div class="detail-item">
-                <p class="label">Points</p>
-                <p class="value">0.325</p>
-              </div>
-            </div>
-
-            <button class="cta-button">Get started</button>
-          </div>
-        </section>
-      </div>
-    </main>
+          </section>
+        </div>
+      </main>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
