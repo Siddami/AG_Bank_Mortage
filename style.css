@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+:root {
+    /* --- COLOR PALETTE TO MATCH DESIGN --- */
+    --primary-color: #ffffff; 
+    --accent-blue: #066EF6;
+    --accent-purple: #9900ff; 
+    --text-dark: #45535e; 
+    --dim-text: #888;
+    --slider-track-gray: #e0e0e0;
+
+    /* --- LAYOUT & FONT --- */
+    background-color: #e3edf9;
+    color: var(--text-dark);
+    font-size: 16px;
+}
+
+/* --- 1. Global Layout & Header --- */
+
+header {
+    background-color: var(--primary-color);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); 
+    padding: 15px 0;
+}
+
+.navbar {
+    color: var(--accent-blue);
+    display: flex;
+    justify-content: space-between;
+    width: 90%; 
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+}
+
+.menu-icon i {
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px; 
+}
+
+/* --- 2. Input Form (Left Side) --- */
+.mortgage-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 55%;
+}
+
+.form-header h2 {
+    font-size: 2rem; 
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    color: var(--dim-text); 
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+/* Price Inputs (Purchase Price / Down Payment) */
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.price-display {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.price-display span {
+    font-size: 2.5rem; 
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.price-display input[type="number"] {
+    font-size: 2.5rem; 
+    font-weight: 600;
+    border: none;
+    outline: none;
+    padding: 0;
+    width: 250px;
+    background: transparent;
+}
+
+
+/* Range Slider Styling */
+
+input[type="range"] {
+    width: 100%;
+    height: 2px; /* Increased track height */
+    background: var(--slider-track-gray);
+    border-radius: 3px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+
+.range-min-max {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--dim-text);
+    margin-top: -5px;
+}
+
+.min-req {
+    display: block;
+    font-size: 14px;
+    color: var(--dim-text);
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* Period and Zip Code Grid */
+
+.input-group-grid {
+    display: grid;
+    grid-template-columns: 1fr 150px; 
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Custom Radio Buttons */
+
+.radio-option {
+    display: block;
+    margin-top: 10px;
+}
+
+.radio-option input[type="radio"] {
+    opacity: 0; 
+    position: absolute;
+}
+
+.radio-option label {
+    position: relative;
+    padding-left: 25px; 
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.radio-option label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.radio-option input[type="radio"]:checked + label::before {
+    border-color: var(--accent-blue); 
+}
+
+.radio-option input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-blue); 
+}
+
+/* Zip Code Input */
+
+.zip-code-input {
+    text-align: right;
+}
+
+.zip-code-input input[type="text"] {
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: right;
+    margin-top: 10px;
+    background: transparent;
+    font-weight: 500;
+}
+
+/* --- 3. Summary Card (Right Side) --- */
+
+.mortgage-summary-card {
+    background-color: var(--primary-color);
+    width: 40%; 
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+
+}
+
+.output-card {
+    background-color: transparent;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    padding-bottom: 50px;
+}
+
+.output-card .card-heading {
+    font-size: 14px;
+    color: var(--dim-text);
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.payment-display {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.currency-symbol {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.payment-amount {
+    font-size: 5.5rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    line-height: 1;
+}
+
+.rate-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.detail-item {
+    text-align: center;
+}
+
+.detail-item .label {
+    font-size: 14px;
+    color: var(--dim-text);
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.detail-item .value {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* --- CTA Button (Half-Out, Left-Aligned) --- */
+
+.cta-button {
+    background-color: var(--accent-purple);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: auto;
+    
+    /* Absolute Positioning for the button half out effect */
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    transform: none;
+}
+
+.cta-button:hover {
+    background-color: #7d00cc;
+}
