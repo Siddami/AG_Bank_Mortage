@@ -72,7 +72,7 @@ header {
 .mortgage-form {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 3em;
   width: 60%;
 }
 
@@ -121,7 +121,7 @@ header {
   font-weight: 500;
   border: none;
   outline: none;
-  padding: 10px 0 0 5px;
+  padding: 15px 0 0 5px;
   width: 250px;
   background: transparent;
   color: var(--text-dark);
@@ -312,7 +312,7 @@ input[type="range"] {
   background-color: var(--accent-purple);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 12px 40px;
   font-size: 1rem;
   font-weight: 600;
