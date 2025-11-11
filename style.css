@@ -15,7 +15,7 @@
   --slider-track-gray: #e0e0e0;
 
   /* --- LAYOUT & FONT --- */
-  background: linear-gradient(to right, #b7ccf5, #a99ff7, #a374fa);
+  background-color: black;
   color: var(--text-dark);
   font-size: 16px;
 }
@@ -25,6 +25,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: linear-gradient(to right, #b7ccf5, #a99ff7, #a374fa);
+  width: 80%;
+  margin: auto;
 }
 
 .main-container {
