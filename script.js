@@ -4,6 +4,7 @@ const downPaymentText = document.getElementById("down-payment-text");
 const downPaymentSlider = document.getElementById("down-payment-slider");
 const periodInputs = document.querySelectorAll('input[name="period"]');
 const zipCodeInput = document.getElementById("zip-code");
+const ctaButton = document.querySelector(".cta-button");
 
 const paymentAmountElement = document.querySelector(".payment-amount");
 const rateValueElement = document.querySelector(
@@ -18,7 +19,7 @@ const pointsValueElement = document.querySelector(
 
 purchasePriceSlider.addEventListener("input", () => {
   purchasePriceText.value = purchasePriceSlider.value;
-  updateCalculator();
+  updateSliderBackgrounds();
 });
 
 purchasePriceText.addEventListener("change", () => {
@@ -28,12 +29,12 @@ purchasePriceText.addEventListener("change", () => {
   val = Math.min(val, 2500000);
   purchasePriceText.value = val;
   purchasePriceSlider.value = val;
-  updateCalculator();
+  updateSliderBackgrounds();
 });
 
 downPaymentSlider.addEventListener("input", () => {
   downPaymentText.value = downPaymentSlider.value;
-  updateCalculator();
+  updateSliderBackgrounds();
 });
 
 downPaymentText.addEventListener("change", () => {
@@ -43,7 +44,7 @@ downPaymentText.addEventListener("change", () => {
   downPaymentValue = Math.max(downPaymentValue, minDownPayment);
   downPaymentText.value = downPaymentValue;
   downPaymentSlider.value = downPaymentValue;
-  updateCalculator();
+  updateSliderBackgrounds();
 });
 
 // --- PLACEHOLDER DATA (will be replacing with backend api data later)
@@ -107,11 +108,11 @@ function updateCalculator() {
   updateSliderBackgrounds();
 }
 
-periodInputs.forEach((input) => {
-  input.addEventListener("change", updateCalculator);
-});
+// periodInputs.forEach((input) => {
+//   input.addEventListener("change", updateCalculator);
+// });
 
-zipCodeInput.addEventListener("input", updateCalculator);
+ctaButton.addEventListener("click", updateCalculator);
 
 document.addEventListener("DOMContentLoaded", updateCalculator);
 
@@ -126,6 +127,6 @@ function updateSliderBackgrounds() {
 
     const percentage = ((val - min) / (max - min)) * 100;
 
-    slider.style.background = `linear-gradient(to right, var(--accent-blue) 0%, var(--accent-blue) ${percentage}%, var(--slider-track-gray) ${percentage}%, var(--slider-track-gray) 100%)`;
+    slider.style.background = `linear-gradient(to right, var(--accent-blue) 0%, var(--accent-blue) ${percentage}%, var(--slider-track-gray) ${percentage}%, var(--dim-text) 100%)`;
   });
 }
